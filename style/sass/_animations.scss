@@ -1,0 +1,63 @@
+@keyframes apphover {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    25% {
+        transform: rotateZ(-20deg);
+    }
+    75% {
+        transform: rotateZ(20deg);
+    }
+    100% {
+        transform: rotateZ(0deg);
+    }
+}
+
+@keyframes phonezoom {
+    0% {
+        transform: rotateZ(0);
+    }
+    35% {
+        transform: rotateZ(90deg);
+    }
+    50% {
+        transform: rotateZ(90deg) scale(0.8);
+    }
+    100% {
+        transform: rotateZ(90deg) scale(5);
+    }
+}
+
+@keyframes appopenning {
+    0% {
+        z-index: 90;
+        border-radius: 4vh;
+        transform: scale(1);
+    }
+    50% {
+        border-radius: 6vh;
+        transform: scale(20);
+    }
+    100% {
+        z-index: 90;
+        transform: scale(20);
+    }
+}
+
+@keyframes navbtnclick {
+    from {
+        transform: translateX(6vh);
+        opacity: 0.0;
+        width: 0vh;
+    }
+    60% {
+        transform: translateX(0vh);
+        opacity: 0.5;
+        width: 12vh;
+    }
+    to {
+        transform: translateX(0vh);
+        opacity: 0.0;
+        width: 12vh;
+    }
+}

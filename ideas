@@ -1,0 +1,6 @@
+Un telephone au centre
+Avec des applications rapport avec mes competences
+Quand clique une application alors sa zoom sur l'application et sa demarre
+
+Quand le screen c'est un telephone alors afficher que les application (icons)
+L'icon de chaque applications c'est un canvas, quand ce canvas est cliquer, il zoom et prend tous l'ecran
