@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style/sass/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <script src="scripts/canvas.js"></script>
+    <script src="apps/utils.js"></script>
+
+    <title>Fortin Evan Portfolio</title>
+</head>
+<body>
+    <img src="assets/images/Evan.jpg" id="app_assets_cv_evan_image" width="717" height="717" style="display: none;">
+    <div id="phone">
+        <!-- Border of the phone -->
+        <div id="borders">
+
+            <!-- Screen of the phone -->
+            <div id="screen">
+
+                <!-- The up bar -->
+                <div id="notif-bar">
+                    <div id="left-part"></div>
+                    <div id="camera"></div>
+                </div>
+
+                <div id="pages">
+                    <!-- Pro page -->
+                    <div class="page">
+
+                        <!-- Applications -->
+                        <div class="clock">
+                            <div id="hour">12:45</div>
+                            <div id="day">Friday 29 September</div>
+                        </div>
+                        <canvas id="app-who-i-am"></canvas>
+                        <canvas id="app-cv" class="fullscreen shake"></canvas>
+                        <canvas id="app-motivation" class="fullscreen"></canvas>
+                        <canvas id="app-contact" class="shake"></canvas>
+                        <canvas id="app-projects" class="fullscreen shake"></canvas>
+                        <canvas id="app-settings"></canvas> <!-- cookie storage -->
+                        <?php require "apps/template/app.php"; ?>
+                    </div>
+
+                    <!-- Games/others page -->
+                    <div class="page">
+
+                        <!-- Applications -->
+                        <canvas id="app-game1"></canvas>
+                        <canvas id="app-game2" class="fullscreen"></canvas>
+                        <canvas id="app-barell-roll"></canvas>
+                        <canvas id="app-torch"></canvas> <!-- lil troll -->
+                    </div>
+                </div>
+
+                <!-- Navigation bar -->
+                <div id="navigation-bar">
+                    <div id="btn-back" class="nav-btn">
+                        <div class="nav-btn-animation"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="80 -880 800 800"><path d="M403.654-301.384q-14.5 9.115-28.673 1.192-14.174-7.923-14.174-25.808v-311.808q0-17 14.174-24.923 14.173-7.923 28.673 1.192l244.77 157.231q11.461 8.116 11.461 22.846 0 14.731-11.461 21.962l-244.77 158.116ZM391-481.462Zm0 150.77 238.654-150.77L391-632.231v301.539Z"/></svg>
+                    </div>
+                    <div id="btn-home" class="nav-btn">
+                        <div class="nav-btn-animation"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-480Zm0 240q-99.846 0-169.923-70.077T240-480q0-99.846 70.077-169.923T480-720q99.846 0 169.923 70.077T720-480q0 99.846-70.077 169.923T480-240Zm0-40q83 0 141.5-58.5T680-480q0-83-58.5-141.5T480-680q-83 0-141.5 58.5T280-480q0 83 58.5 141.5T480-280Z"/></svg>
+                    </div>
+                    <div id="btn-recent" class="nav-btn">
+                        <div class="nav-btn-animation"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="-120 -1080 1200 1200"><path d="M231.448-171.271q-25.046 0-42.612-17.565-17.565-17.566-17.565-42.612v-497.104q0-25.046 17.565-42.612 17.566-17.565 42.612-17.565h497.104q25.046 0 42.612 17.565 17.565 17.566 17.565 42.612v497.104q0 25.046-17.565 42.612-17.566 17.565-42.612 17.565H231.448Zm.091-47.96h496.922q4.615 0 8.462-3.846 3.846-3.847 3.846-8.462v-496.922q0-4.615-3.846-8.462-3.847-3.846-8.462-3.846H231.539q-4.615 0-8.462 3.846-3.846 3.847-3.846 8.462v496.922q0 4.615 3.846 8.462 3.847 3.846 8.462 3.846Z"/></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="thin"></div>
+        <div id="back">
+            <div id="backplate">
+                <div id="leftside">
+                    <div id="cameras">
+                        <div class="camera"><div class="camerapoint"></div></div>
+                        <div class="camera"><div class="camerapoint"></div></div>
+                    </div>
+                    <div id="nameplate">
+                        FORTIN EVAN
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/applications/who.js"></script>
+    <script src="scripts/applications/cv.js"></script>
+    <script src="scripts/applications/motivation.js"></script>
+    <script src="scripts/applications/contact.js"></script>
+    <script src="scripts/applications/projects.js"></script>
+    <script src="scripts/applications/settings.js"></script>
+    <script src="scripts/applications/game1.js"></script>
+    <script src="scripts/applications/game2.js"></script>
+    <script src="scripts/applications/barell-roll.js"></script>
+    <script src="scripts/applications/torch.js"></script>
+    <script src="scripts/phone.js"></script>
+</body>
+</html>
