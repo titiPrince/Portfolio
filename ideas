@@ -4,3 +4,13 @@ Quand clique une application alors sa zoom sur l'application et sa demarre
 
 Quand le screen c'est un telephone alors afficher que les application (icons)
 L'icon de chaque applications c'est un canvas, quand ce canvas est cliquer, il zoom et prend tous l'ecran
+
+
+
+
+
+
+Chaque applicaions sont en realiter des iframe avec leur propre page
+ils communiquent comme cela:
+    https://stackoverflow.com/questions/9153445/how-to-communicate-between-iframe-and-the-parent-site
+

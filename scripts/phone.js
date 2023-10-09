@@ -50,7 +50,7 @@ function startApplication(evt) {
     canvas = evt.target;
     currentApp = canvas;
     canvas.classList.remove('apphover');
-    canvas.app_clearIcon();
+    canvas.app_load();
 
     let isFullscreen = canvas.classList.contains('fullscreen');
     
@@ -260,17 +260,18 @@ window.isMobile = function() {
 };
 
 window.addEventListener('load', function () {
-    let navButtons = document.getElementsByClassName('nav-btn')
+    let navButtons = document.getElementsByClassName('nav-btn');
     isOnPhone = window.isMobile();
 
     let count = 0
     for (let page of PAGES) {
-        for (let app of page.children) {
-            if (app.tagName !== 'CANVAS') continue
+        let apps = page.querySelectorAll("div.app");
+
+        for (let app of apps) {
 
             app.addEventListener('click', startApplication);
-            app.addEventListener('mouseenter', mouseEnterApplication);
-            app.addEventListener('mouseleave', mouseLeaveApplication);
+            // app.addEventListener('mouseenter', mouseEnterApplication);
+            // app.addEventListener('mouseleave', mouseLeaveApplication);
 
             try {
                 app.app_drawIcon()

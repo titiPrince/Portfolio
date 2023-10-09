@@ -1,0 +1,483 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v5.0.2 | 20191019
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+  display: none;
+}
+
+body {
+  line-height: 1;
+}
+
+menu, ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  font-family: "Lato", ui-rounded;
+  user-select: none;
+}
+
+canvas {
+  background-color: aliceblue;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 4vh;
+  z-index: 1;
+  height: auto;
+  transition: transform 1s ease-out 0s, border-radius 50ms, opacity 500ms;
+}
+
+canvas.apphover.shake {
+  animation: apphover 400ms ease-in-out 0s infinite;
+}
+
+canvas.expanded {
+  border-radius: 0;
+  position: absolute;
+  z-index: 50;
+}
+
+canvas.expanded.fullscreen {
+  z-index: 90;
+}
+
+.clock {
+  color: white;
+}
+.clock > #hour {
+  font-size: 5vh;
+}
+.clock > #day {
+  font-size: 1.6vh;
+}
+
+@media (max-aspect-ratio: 10/16) and (max-width: 380px) {
+  #borders {
+    width: 100%;
+  }
+  #borders > #screen {
+    width: 100%;
+    height: 100%;
+  }
+  #camera {
+    width: 90px;
+  }
+  .page {
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 92vw;
+    margin: 4vw;
+    gap: 4vw;
+  }
+  .page > canvas.expanded {
+    height: 100vh;
+    width: 100vw;
+    top: -10.5vh;
+    right: -3.9vw;
+  }
+  .clock {
+    grid-column: 1/4;
+  }
+}
+@media (max-aspect-ratio: 10/16) and (min-width: 381px) {
+  #borders {
+    width: 100%;
+  }
+  #borders > #screen {
+    width: 100%;
+    height: 100%;
+  }
+  #camera {
+    width: 90px;
+  }
+  .page {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 92vw;
+    margin: 4vw;
+    gap: 4vw;
+  }
+  .page > canvas.expanded {
+    height: 100vh;
+    width: 100vw;
+    top: -10.5vh;
+    right: -3.9vw;
+  }
+  .clock {
+    grid-column: 1/5;
+  }
+}
+@media (min-aspect-ratio: 10/16) {
+  #borders {
+    aspect-ratio: 9/16;
+    background-color: rgb(39, 39, 39);
+    box-shadow: inset 0 0 13px 3px black;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5vh;
+  }
+  #borders > #screen {
+    width: 91%;
+    height: 95vh;
+    border-radius: 3.5vh;
+    box-shadow: 0 0 3vh 0.3vh #6464de;
+    contain: content;
+    transition: box-shadow 1s;
+  }
+  #camera {
+    width: 24%;
+  }
+  .page {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 47vh;
+    gap: 2.8vh;
+    margin: 2vh;
+  }
+  .page > canvas.expanded {
+    height: 100vh;
+    width: 100vw;
+    top: -10.2vh;
+  }
+  .page > canvas.expanded:not(.fullscreen) {
+    height: 96vh;
+    width: 52vh;
+    top: -8.2vh;
+    right: -2.65vh;
+  }
+  .clock {
+    grid-column: 1/5;
+  }
+}
+#phone {
+  display: flex;
+  background-color: beige;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  contain: content;
+}
+#phone > #borders {
+  height: 100vh;
+  display: flex;
+  transition: transform 1s;
+}
+#phone > #borders > #screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(135deg, rgb(84, 74, 255) 0%, rgb(153, 89, 255) 38%, rgb(90, 136, 246) 65%, rgb(0, 212, 255) 100%);
+}
+#phone > #borders > #screen > #notif-bar {
+  width: 100%;
+  height: 3.6vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#phone > #borders > #screen > #notif-bar > #camera {
+  height: 100%;
+  z-index: 60;
+  background-color: rgb(39, 39, 39);
+  border-bottom-left-radius: 3.5vh;
+  border-bottom-right-radius: 3.5vh;
+  box-shadow: inset 0vh -0.5vh 2vh 0vh #6464de;
+  transition: box-shadow 1s;
+}
+#phone > #borders > #screen > #pages {
+  display: flex;
+  flex-direction: row;
+}
+#phone > #borders > #screen > #pages > .page {
+  height: 76.4vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  position: absolute;
+}
+#phone > #borders > #screen > #pages > .page > div.clock {
+  grid-row: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: 100%;
+  border-radius: 5vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  /* align-content: center; */
+  justify-content: center;
+  align-items: center;
+}
+#phone > #borders > #screen > #pages > .page > div.app {
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 4vh;
+}
+#phone > #borders > #screen > #pages > .page > div.app.shake:hover {
+  animation: apphover 400ms ease-in-out 0s infinite;
+  cursor: pointer;
+}
+#phone > #borders > #screen > #navigation-bar {
+  height: 5.3vh;
+  margin-bottom: 2vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#phone > #borders > #screen > #navigation-bar .nav-btn {
+  width: 12vh;
+  height: 3vh;
+  text-align: center;
+  border-radius: 3vh;
+  contain: content;
+}
+#phone > #borders > #screen > #navigation-bar .nav-btn-animation {
+  background-color: #e5e5e5;
+  opacity: 0;
+  height: 5.3vh;
+  width: 0;
+  transform: translateX(6vh);
+  border-radius: 3vh;
+  position: absolute;
+  transition: transform 200ms, width 200ms;
+}
+#phone > #borders > #screen > #navigation-bar svg {
+  fill: #e5e5e5;
+  height: 100%;
+  transform: scaleX(-1);
+}
+#phone > #borders > #screen > #navigation-bar > #btn-back {
+  height: 100%;
+}
+#phone > #borders > #screen > #navigation-bar > #btn-home {
+  height: 100%;
+}
+#phone > #borders > #screen > #navigation-bar > #btn-recent {
+  height: 100%;
+}
+#phone > #thin {
+  position: absolute;
+  width: 28vh;
+  height: 100vh;
+  background-color: hsl(0, 0%, 10%);
+  transform: translateX(14vh);
+  border-top-right-radius: 20vh;
+  border-bottom-right-radius: 20vh;
+  z-index: -1;
+  visibility: hidden;
+  transition: transform 1s, width 1.4s, border-top-right-radius 1s, border-bottom-right-radius 1s, border-top-left-radius 1s, border-bottom-left-radius 1s;
+}
+#phone > #back {
+  aspect-ratio: 9/16;
+  height: 100vh;
+  position: absolute;
+  transform: rotateY(90deg);
+  background-color: rgb(39, 39, 39);
+  box-shadow: inset 0 0 13px 3px black;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5vh;
+  transition: transform 1.5s;
+}
+#phone > #back > #backplate {
+  width: 91%;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3.5vh;
+  box-shadow: 0 0 3vh 0.3vh #2d3149;
+  justify-content: space-between;
+  contain: content;
+  background-color: rgba(63, 81, 181, 0.2392156863);
+}
+#phone > #back > #backplate > #leftside {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: brightness(1.2);
+}
+#phone > #back > #backplate > #leftside > #cameras {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 20vh;
+  margin-top: 2vh;
+}
+#phone > #back > #backplate > #leftside > #cameras > .camera {
+  width: 6.5vh;
+  height: 6.5vh;
+  background-color: #17171d;
+  border-radius: 5vh;
+  border: 0.8vh #302552 solid;
+  box-shadow: 0 0 1vh rgba(0, 0, 0, 0.7019607843), inset 0 0 1vh rgba(0, 0, 0, 0.701);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#phone > #back > #backplate > #leftside > #cameras > .camera > .camerapoint {
+  width: 15%;
+  height: 15%;
+  background-color: #020202;
+  border-radius: 3vh;
+  border: 1.3vh #2f2f2f solid;
+}
+#phone > #back > #backplate > #leftside > #nameplate {
+  color: #e1e1e1;
+  transform: rotateZ(270deg);
+  margin-bottom: 25vh;
+  font-family: "astera", fantasy;
+  font-size: 4.5vh;
+  text-wrap: normal;
+}
+
+@font-face {
+  font-family: "astera";
+  src: url("../../assets/fonts/astera.ttf");
+}
+@font-face {
+  font-family: "astral";
+  src: url("../../assets/fonts/astral.ttf");
+}
+@font-face {
+  font-family: "distant";
+  src: url("../../assets/fonts/distant.ttf");
+}
+@font-face {
+  font-family: "Lato";
+  src: url("../../assets/fonts/lato.ttf");
+}
+@font-face {
+  font-family: "magma";
+  src: url("../../assets/fonts/magma.otf");
+}
+@font-face {
+  font-family: "nasalization";
+  src: url("../../assets/fonts/nasalization.otf");
+}
+@font-face {
+  font-family: "rocket";
+  src: url("../../assets/fonts/rocket.otf");
+}
+@font-face {
+  font-family: "xavier";
+  src: url("../../assets/fonts/xavier.ttf");
+}
+@keyframes apphover {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  25% {
+    transform: rotateZ(-20deg);
+  }
+  75% {
+    transform: rotateZ(20deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+@keyframes phonezoom {
+  0% {
+    transform: rotateZ(0);
+  }
+  35% {
+    transform: rotateZ(90deg);
+  }
+  50% {
+    transform: rotateZ(90deg) scale(0.8);
+  }
+  100% {
+    transform: rotateZ(90deg) scale(5);
+  }
+}
+@keyframes appopenning {
+  0% {
+    z-index: 90;
+    border-radius: 4vh;
+    transform: scale(1);
+  }
+  50% {
+    border-radius: 6vh;
+    transform: scale(20);
+  }
+  100% {
+    z-index: 90;
+    transform: scale(20);
+  }
+}
+@keyframes navbtnclick {
+  from {
+    transform: translateX(6vh);
+    opacity: 0;
+    width: 0vh;
+  }
+  60% {
+    transform: translateX(0vh);
+    opacity: 0.5;
+    width: 12vh;
+  }
+  to {
+    transform: translateX(0vh);
+    opacity: 0;
+    width: 12vh;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

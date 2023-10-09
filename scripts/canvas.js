@@ -14,8 +14,6 @@ function vw_to_px(vw) {
     return document.documentElement.clientWidth * (vw / 100);
 }
 
-
-
 class tiNode {
     parent = null;
     id = null;
@@ -96,17 +94,27 @@ class tiGroup extends tiNode {
     }
 }
 
+class tiPercent {
+    static percent = (m, v) => {return m / 100 * v}
+    static vh = (m, v) => {return v / 100 * document.documentElement.clientHeight;}
+
+    constructor(parent, unit, value) {
+        this.p = parent;
+        this.u = unit;
+        this.v = value;
+    }
+
+    toPX() {
+        return this.u(this.p.width, this.v);
+    }
+}
+
 class tiCanvas extends tiGroup {
     constructor(canvasElement) {
         super();
 
         this.c = canvasElement;
         this.ctx = this.c.getContext('2d');
-    }
-
-    refreshSize() {
-        this.c.width = this.c.clientWidth;
-        this.c.height = this.c.clientHeight;
     }
 
     erase() {
@@ -118,13 +126,14 @@ class tiCanvas extends tiGroup {
         this.ctx.restore();
     }
 
+    refreshSize() {
+        this.c.width = this.c.clientWidth;
+        this.c.height = this.c.clientHeight;
+    }
+
     refresh() {
         this.erase();
         this.draw(this.ctx);
-    }
-
-    resized() {
-        console.log('resized')
     }
 }
 

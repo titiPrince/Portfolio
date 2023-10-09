@@ -7,7 +7,7 @@ canvas_cv.app_drawIcon = function() {
     this.ti.refreshSize();
 
     text = new tiText({
-        x: this.width/2,
+        x: this.box.pw(5),
         y: this.height/2 + vh_to_px(0.5),
         text: "CV",
         size: vh_to_px(3),
@@ -31,7 +31,7 @@ canvas_cv.app_start = function() {
         y: 0,
         w: vh_to_px(55),
         h: vh_to_px(100),
-        fillColor: "white",
+        fillColor: "white"
     })
 
     let leftPart = new tiRect({
